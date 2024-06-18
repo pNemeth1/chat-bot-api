@@ -27,7 +27,7 @@ import customMessage from "src/utils/responses/customMessage.response";
 import { MESSAGES } from "src/utils/constants/messages.constants";
 
 @Injectable()
-export class LangchainChatService {
+export class LangchainService {
   async chat(basicMessageDto: BasicMessageDto) {
     try {
       const prompt = PromptTemplate.fromTemplate(TEMPLATES.BASIC_CHAT_TEMPLATE);

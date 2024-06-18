@@ -15,11 +15,11 @@
  */
 import { Body, Controller, Post } from "@nestjs/common";
 import { BasicMessageDto } from "./dtos/basic-message.dto";
-import { LangchainChatService } from "./langchain.service";
+import { LangchainService } from "./langchain.service";
 
 @Controller("langchain-chat")
-export class LangchainChatController {
-  constructor(private readonly langchainChatService: LangchainChatService) {}
+export class LangchainController {
+  constructor(private readonly langchainChatService: LangchainService) {}
 
   @Post("basic-chat")
   async chat(@Body() messagesDto: BasicMessageDto) {
