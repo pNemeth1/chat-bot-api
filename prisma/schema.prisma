@@ -34,3 +34,28 @@ model User {
   updatedAt DateTime  @updatedAt
   articles  Article[]
 }
+
+enum MarketingChannelType {
+  META
+  TIKTOK
+  PRINT
+  EMAIL
+}
+
+model MarketingChannel {
+  id          Int                  @id @default(autoincrement())
+  type        MarketingChannelType
+  description String?
+}
+
+model Issue {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+}
+
+model Price {
+  id          Int     @id @default(autoincrement())
+  value       Float
+  currency    String
+  description String?
+}
