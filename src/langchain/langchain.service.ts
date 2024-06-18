@@ -32,6 +32,8 @@ export class LangchainService {
     try {
       const prompt = PromptTemplate.fromTemplate(TEMPLATES.BASIC_CHAT_TEMPLATE);
 
+      // LLM temperature is a parameter that influences the language model's output, determining whether the output is more random and creative or more predictable. A higher temperature will result in lower probability, i.e more creative outputs.
+
       const model = new ChatOpenAI({
         temperature: +openAI.BASIC_CHAT_OPENAI_TEMPERATURE,
         modelName: openAI.GPT_3_5_TURBO_1106.toString(),
