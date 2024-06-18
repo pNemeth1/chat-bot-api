@@ -6,9 +6,10 @@ import { ArticlesModule } from './articles/articles.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { PromptsModule } from './prompts/prompts.module';
+import { LangchainModule } from './langchain/langchain.module';
 
 @Module({
-  imports: [PrismaModule, ArticlesModule, UsersModule, AuthModule, PromptsModule],
+  imports: [PrismaModule, ArticlesModule, UsersModule, AuthModule, PromptsModule, LangchainModule],
   controllers: [AppController],
   providers: [AppService],
 })
