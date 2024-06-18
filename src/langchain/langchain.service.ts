@@ -40,10 +40,14 @@ export class LangchainService {
       });
 
       const outputParser = new HttpResponseOutputParser();
+
+      // Chains are one of the core concepts of LangChain. Chains allow you to go beyond just a single API call to a language model and instead chain together multiple calls in a logical sequence. They allow you to combine multiple components to create a coherent application
       const chain = prompt.pipe(model).pipe(outputParser);
+
       const response = await chain.invoke({
         input: basicMessageDto.user_query,
       });
+
       return customMessage(
         HttpStatus.OK,
         MESSAGES.SUCCESS,
